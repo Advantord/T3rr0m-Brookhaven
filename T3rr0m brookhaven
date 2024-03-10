@@ -1,5 +1,6 @@
 local MenonerLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Advantord/Noner-Library/main/Library%20Noner')))()
-local Window = MenonerLib:MakeWindow({Name = "T3rr0m ", HidePremium = false, SaveConfig = true, ConfigFolder = "t3rr0m"})
+local Window = MenonerLib:MakeWindow({Name = "BrookHaven", HidePremium = false, SaveConfig = true, ConfigFolder = "t3rr0m"})
+
 
 -- Notification
 
@@ -9,6 +10,7 @@ MenonerLib:MakeNotification({
 	Image = "",
 	Time = 5
 })
+
 
 -- Tabs
 
@@ -113,7 +115,9 @@ local Section = Tools1000:AddSection({
 	Name = "Server Tools"
 	})
 	
-	-- function Visuals
+	
+	
+--	function Visuals
 	
 	local Section = Visuals1000:AddSection({
 		Name = "Visuals Scripts Developers"
@@ -132,6 +136,35 @@ local Section = Tools1000:AddSection({
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/Advantord/T3rr0m-Esp-Line/main/T3rr0m%20Esp%20Line"),true))()
 		end
 		})
+		
+		local Section = Visuals1000:AddSection({
+		Name = "Players Tools"
+		})
+		
+		Visuals1000:AddButton({
+			Name = "Distributing Items From Playerss Inventories",
+			Callback = function()
+            for i,v in pairs (game.Players:GetChildren()) do
+
+           for i,v in pairs(v.Backpack:GetChildren()) do
+           local clone = v:Clone()
+           clone.Parent = game.Players.LocalPlayer.Backpack
+           end
+            end
+            end
+			})
+			
+			Visuals1000:AddButton({
+			Name = "Shows What Players Have In Their Inventory In The Console",
+			Callback = function()
+            for i,v in pairs (game.Players:GetChildren()) do
+
+           for i,v in pairs(v.Backpack:GetChildren()) do
+           print(v.Name)
+           end
+            end
+            end
+			})
 
 -- functions Also scripts
 
